@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Estoque</title>
+</head>
+<body>
+    <h1>Consulta Estoque</h1>
+
+    <form id="consulta-estoque-form">
+        <p>Filtros:</p>
+        <label for="tipo-filtro">Tipo de Filtro:</label>
+        <select id="tipo-filtro">
+            <option value="nome">Nome</option>
+            <option value="validade">Validade</option>
+            <option value="concentracao">Concentração</option>
+            <option value="dosagem">Dosagem</option>
+            <option value="quantidade">Quantidade</option>
+            <option value="preco">Preço</option>
+            <option value="fabricante">Fabricante</option>
+        </select>
+        <input type="text" id="valor-filtro" placeholder="nome">
+        <button type="button" id="adicionar-filtro">Adicionar Filtro</button>
+        <div id="filtros-dinamicos"></div>
+    </form>
+    
+    <button type="submit">Consultar</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
