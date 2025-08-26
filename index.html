@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta Estoque</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Consulta Estoque</h1>
+    <h1>Consulta Estoque</h1>    
+    <section class = "conteiner" id="filtersConteiner">
+        <h2 id = "h2">Filtros</h2>
+        <fieldset class = "filter">
+            <label for="filterType">Tipo de Filtro:</label>
+            <select name="filterType" id="filterType">
+                <option value="name">Nome</option>
+                <option value="price">Preço</option>
+            </select>
+            <input type="text" id="filterValue" placeholder="Digite o valor do filtro">
+        </fieldset>
+        <input type="submit" value="Consultar" id="submitButton">
+    </section>
 
-    <form id="consulta-estoque-form">
-        <p>Filtros:</p>
-        <label for="tipo-filtro">Tipo de Filtro:</label>
-        <select id="tipo-filtro">
-            <option value="nome">Nome</option>
-            <option value="validade">Validade</option>
-            <option value="concentracao">Concentração</option>
-            <option value="dosagem">Dosagem</option>
-            <option value="quantidade">Quantidade</option>
-            <option value="preco">Preço</option>
-            <option value="fabricante">Fabricante</option>
-        </select>
-        <input type="text" id="valor-filtro" placeholder="nome">
-        <button type="button" id="adicionar-filtro">Adicionar Filtro</button>
-        <div id="filtros-dinamicos"></div>
-    </form>
-    
-    <button type="submit">Consultar</button>
-
-    <script src="index.js"></script>
+    <section class = "conteiner" id = "resultsConteiner">
+    </section>
+    <script src="main.js"></script>>
 </body>
 </html>
