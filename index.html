@@ -13,16 +13,16 @@
         <fieldset class = "filter">
             <label for="filterType">Tipo de Filtro:</label>
             <select name="filterType" id="filterType">
-                <option value="name">Nome</option>
-                <option value="price">Preço</option>
+                <option value="text">Nome</option>
+                <option value="number">Preço</option>
+                <option value="radio">Receita</option>
             </select>
-            <input type="text" id="filterValue" placeholder="Digite o valor do filtro">
         </fieldset>
         <input type="submit" value="Consultar" id="submitButton">
     </section>
 
     <section class = "conteiner" id = "resultsConteiner">
     </section>
-    <script src="main.js"></script>>
+    <script type = "module" src="main.js"></script>
 </body>
 </html>
