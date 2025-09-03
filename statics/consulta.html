@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Consulta</title>
+</head>
+<body>
+    <a href="/index.html">Inicio</a>
+    <h1>Consultar Produtos</h1>
+    <section class = "conteiner" id="filtersConteiner">
+        <h2 id = "h2">Filtros</h2>
+        <fieldset class = "filter">
+            <label for="filterType">Tipo de Filtro:</label>
+            <select name="filterType" id="filterType">
+                <option value="">Selecione</option>
+                <option value="text">Nome</option>
+                <option value="number">Preço</option>
+                <option value="radio">Receita</option>
+            </select>
+        </fieldset>
+        <input type="submit" value="Consultar" id="submitButton">
+    </section>
+
+    <section class = "conteiner" id = "resultsConteiner">
+    </section>
+    <script type = "module" src="main.js" defer></script>
+</body>
+</html>

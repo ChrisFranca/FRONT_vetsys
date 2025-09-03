@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <a href="/index.html">Inicio</a><br>
+    <h1>Adicionar Produtos</h1>
+
+    <section id = "formulario">
+        <form id="productForm">
+            <label for="productName">Nome: </label>
+            <input type="text" id="productName" name="productName" required><br>
+
+            <label for="quantity">Quantidade: </label>
+            <input type="number" name="quantity" id="quantity" required><br>
+
+            <label for="concentration">Concentração: </label>
+            <input type="text" name="concentration" id="concentration" required><br>
+
+            <label for="dosage_form">Forma farmacêutica: </label>
+            <input type="text" name="dosage_form" id="dosage_form" required><br>
+
+            <label for="expiration_date">Data de Validade: </label>
+            <input type="date" name="expiration_date" id="expiration_date" required><br>
+
+            <label for="supplier">Fornecedor: </label>
+            <input type="text" name="supplier" id="supplier" required><br>
+
+            <label for="productPrice">Preço: </label>
+            <input type="number" id="productPrice" name="productPrice" required><br>
+
+            <div id ="prescriptionContainer">
+                <label>Necessita de Receita?</label>
+                <input type="radio" id="receitaSim" name="requiresPrescription" value="sim" required>
+                <label for="receitaSim">Sim</label>
+                <input type="radio" id="receitaNao" name="requiresPrescription" value="nao">
+                <label for="receitaNao">Não</label>
+            </div>
+
+            <label for="imagePath">Imagem:</label>
+            <input type="text" id="imagePath" name="imagePath" required><br>
+
+            <label for="description">Descrição</label>
+            <input type="text" name="description" id="description" required><br><br>
+
+            <input type="submit" value="Adicionar Produto">
+        </form>
+    </section>
+
+</body>
+</html>

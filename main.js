@@ -1,11 +1,13 @@
 
-import { commonInput, radioInput, createFilterInput } from './utils.js'
-//------------------------------------------------------------------------------
-let seletor = document.getElementById('filterType')
-seletor.addEventListener('change', createFilterInput)
-//------------------------------------------------------------------------------
-let consultar = document.getElementById("submitButton")
-consultar.addEventListener("click", async function (event) {
+import { createFilterInput } from 'scripts/getStocks.js'
+import {} from 'scripts/postStock.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+    let seletor = document.getElementById('filterType')
+    seletor.addEventListener('change', createFilterInput.bind(document))
+
+    let consultar = document.getElementById("submitButton")
+    consultar.addEventListener("click", async function (event) {
     event.preventDefault() // Evita o envio do formulário
 
     let filterType = document.getElementById("filterType").value
@@ -63,5 +65,5 @@ consultar.addEventListener("click", async function (event) {
         console.error("Erro:", error);
         resultsConteiner.innerHTML += "<p>Ocorreu um erro ao buscar os dados.</p>"
     }
-});
-//------------------------------------------------------------------------------
+    });
+})
