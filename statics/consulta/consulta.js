@@ -1,6 +1,6 @@
 
-import { createFilterInput } from 'scripts/getStocks.js'
-import {} from 'scripts/postStock.js'
+import { createFilterInput } from '../../scripts/getStock.js'
+import { Product } from '/scripts/Product.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     let seletor = document.getElementById('filterType')
@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let consultar = document.getElementById("submitButton")
     consultar.addEventListener("click", async function (event) {
     event.preventDefault() // Evita o envio do formulário
+
+    console.log("Botão consultar clicado")
 
     let filterType = document.getElementById("filterType").value
     let filterValue = document.getElementById("filterValue").value
@@ -41,21 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.length > 0) {
             const ul = document.createElement("ul")
             data.forEach(item => {
-                const li = document.createElement("li")
-                li.innerHTML = `
-                    <strong>ID:</strong> ${item.id}<br>
-                    <strong>Nome:</strong> ${item.name}<br>
-                    <strong>Descrição:</strong> ${item.description}<br>
-                    <strong>Concentração:</strong> ${item.concentration}<br>
-                    <strong>Forma:</strong> ${item.dosage_form}<br>
-                    <strong>Quantidade:</strong> ${item.quantity}<br>
-                    <strong>Preço:</strong> R$ ${item.price}<br>
-                    <strong>Data de Validade:</strong> ${new Date(item.expiration_date).toLocaleDateString()}<br>
-                    <strong>Fornecedor:</strong> ${item.supplier}<br>
-                    <strong>Requer Receita:</strong> ${item.requires_prescription ? "Sim" : "Não"}<br>
-                    <img src="${item.imagePath}" alt="${item.name}" style="max-width: 100px; max-height: 100px;">
-                `;
-                ul.appendChild(li)
+                new Product(
+                    item.name,
+                    item.description,
+                    item.concentration,
+                    item.dosage_form,
+                    item.quantity,
+                    item.price,
+                    item.expiration_date,
+                    item.supplier,
+                    item.requires_prescription,
+                    item.imagePath
+                ).displayProductIn(ul)
             });
             resultsConteiner.appendChild(ul)
         } else {
